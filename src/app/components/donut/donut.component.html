@@ -1,0 +1,25 @@
+<div class = "container">
+    
+    <!-- <p>{{donutResult.count}}</p> -->
+    @for (item of donutResult.results; track $index) {
+       
+        <div class = "row border-bottom">
+            <div class = "col-3">
+                <a routerLink = "/Donut/{{item.id}}">{{item.name}}</a>
+            </div>
+                <div class ="col-3">
+                    <img [src] = "item.photo" alt="{{ item .name }}"  style="width:150px;"/>
+                </div>
+                <div class ="col-3">
+                    <p><a [href]="item.photo_attribution" target="_blank">Photo Attribution</a></p>
+                </div>
+              <div class="col-3">
+                <a (click)="addDonut(item)" class="btn btn-primary">Add to Cart </a>
+              </div>
+            </div>
+       
+       
+    }
+    
+</div>
+

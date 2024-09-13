@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <img src="{{donutdetailResult.photo}}" class="card-img-top" alt="{{donutdetailResult.name}}">
+        <div class="card-body">
+          <h4 class="card-title">{{donutdetailResult.name}}</h4>
+         
+            <h5> Calories:{{donutdetailResult.calories}}</h5>
+            <h6>Extras:</h6>
+            <ul>
+                @for (item of donutdetailResult.extras; track $index) {
+                    <li> <p class = "card-text" > {{item}} </p> </li> 
+                 }
+            </ul>
+           
+            <p><a [href]="donutdetailResult.photo_attribution" target="_blank">Photo Attribution</a></p>
+          <a (click)="addDonut()" class="btn btn-primary">Add to Cart </a>
+         
+          
+        </div>
+      </div>
+</div>
+
